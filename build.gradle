@@ -146,7 +146,7 @@ repositories {
                 url = "https://api.modrinth.com/maven"
             }
         }
-        forRepositories(fg.repository) // Only add this if you're using ForgeGradle, otherwise remove this line
+        forRepositories(fg.repository)
         filter {
             includeGroup "maven.modrinth"
         }
@@ -166,6 +166,11 @@ dependencies {
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}")
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}")
     // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}")
+
+    implementation fg.deobf("maven.modrinth:yungs-cave-biomes:TxgNHPVJ")
+    runtimeOnly fg.deobf("maven.modrinth:terrablender:HI0iCUpi")
+    runtimeOnly fg.deobf("maven.modrinth:yungs-api:PJOYAmAs")
+    runtimeOnly fg.deobf("maven.modrinth:geckolib:RBA7lJaW")
 
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
